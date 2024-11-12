@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --background: #0f0f0f;
+  --foreground: #fff;
+  --card-bg: #0f0f0f;
+  --card-border: #3f3f3f;
+  --text-secondary: #aaa;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: "YouTube Sans", system-ui, sans-serif;
+}
