@@ -37,7 +37,18 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 
 ## Deployment
 
-This project is configured for GitHub Pages deployment with a custom domain. The live version can be accessed at [post.sadad.rest](https://post.sadad.rest).
+This project is configured for deployment on [Vercel](https://vercel.com), the platform built by the creators of Next.js. 
+
+### Deployment Steps:
+1. Fork or clone this repository
+2. Create a new project on Vercel
+3. In the project settings, modify the Build & Development Settings:
+   - Set the Install Command to: `npm install --legacy-peer-deps`
+4. Deploy the project
+
+Alternatively, you can use the one-click deploy button below, but remember to update the Install Command in project settings after deployment:
+
+[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2FsadadYes%2Fpost-archiver-renderer)
 
 ## License
 
