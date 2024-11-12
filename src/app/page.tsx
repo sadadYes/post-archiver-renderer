@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useCallback } from 'react';
-import { ChannelData } from '@/types/post';
+import type { ChannelData } from '@/types/post';
 import PostCard from '@/components/PostCard';
 import Image from 'next/image';
 import { useData } from '@/contexts/DataContext';
@@ -24,7 +24,8 @@ export default function Home() {
         const jsonData = JSON.parse(e.target?.result as string);
         setData(jsonData);
         setError('');
-      } catch (err) {
+      } catch (error) {
+        console.error('Error parsing JSON:', error);
         setError('Invalid JSON file format');
         setData(null);
       }
@@ -42,7 +43,7 @@ export default function Home() {
     setIsDragging(false);
     const file = e.dataTransfer.files[0];
     if (file) handleFileData(file);
-  }, []);
+  }, [handleFileData]);
 
   const handleDragOver = useCallback((e: React.DragEvent<HTMLDivElement>) => {
     e.preventDefault();
@@ -60,7 +61,8 @@ export default function Home() {
       const jsonData = await response.json();
       setData(jsonData);
       setError('');
-    } catch (err) {
+    } catch (error) {
+      console.error('Failed to load example data:', error);
       setError('Failed to load example data');
       setData(null);
     }
