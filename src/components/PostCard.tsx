@@ -16,7 +16,7 @@ export default function PostCard({ post }: { post: Post }) {
     const fullFormattedContent = formatContent(post.content, post.links);
     
     if (!isExpanded && post.content.length > maxLength) {
-      let truncatedContent = post.content.slice(0, maxLength) + '...';
+      const truncatedContent = post.content.slice(0, maxLength) + '...';
       setFormattedHtml(formatContent(truncatedContent, post.links));
     } else {
       setFormattedHtml(fullFormattedContent);

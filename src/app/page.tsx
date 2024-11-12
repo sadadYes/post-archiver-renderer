@@ -12,7 +12,7 @@ export default function Home() {
   const [error, setError] = useState<string>('');
   const [isDragging, setIsDragging] = useState(false);
 
-  const handleFileData = (file: File) => {
+  const handleFileData = useCallback((file: File) => {
     if (!file || !file.name.endsWith('.json')) {
       setError('Please upload a JSON file');
       return;
@@ -31,7 +31,7 @@ export default function Home() {
       }
     };
     reader.readAsText(file);
-  };
+  }, [setData, setError]);
 
   const handleFileUpload = (event: React.ChangeEvent<HTMLInputElement>) => {
     const file = event.target.files?.[0];
