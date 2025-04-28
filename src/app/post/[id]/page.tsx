@@ -63,7 +63,7 @@ export default function PostPage() {
           <h2 className="text-xl font-semibold text-gray-200 mb-4">
             {post.comment_count} Comments
           </h2>
-          {post.comments.map((comment, index) => (
+          {(post.comments || []).map((comment, index) => (
             <div key={index} className="bg-[#1a1a1a] rounded-xl shadow-lg p-4">
               <div className="flex gap-3">
                 <div className="flex-shrink-0 w-8 h-8 relative">
